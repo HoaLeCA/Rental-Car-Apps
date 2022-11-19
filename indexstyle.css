@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;1,200;1,300&family=Roboto:wght@300;400;700&display=swap');
+/*Reference:*/
+/*Some designs are inspired from Codepen website*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: url(img/background.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Roboto', sans-serif;
+    height: 130vh;
+    width: 100%;
+    font-size: 0.9rem;
+
+    /* https://www.pexels.com/photo/photo-of-car-on-expressway-3422964/ */
+
+}
+
+main {
+
+    min-height: 70vh;
+    margin-bottom: -50vh;
+    margin: auto;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: black;
+    text-align: center;
+    padding: 2rem;
+    align-items: center;
+
+}
+
+header {
+    height: 20vh;
+    width: 100%;
+    padding: 0px 10px;
+
+}
+
+header a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    border-radius: 4px;
+}
+
+header a.logo img {
+    width: 9vw;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px 0px rgb(210, 12, 12);
+    border-radius: 25px 25px;
+    background: #000;
+  
+}
+
+header a:hover {
+    background-color: rgb(59, 182, 65);
+    color: black
+}
+
+header a.active {
+    background-color: #f78383;
+    color: white;
+}
+
+#button {
+    text-decoration: none;
+    padding: 0.5rem 2rem;
+    color: #fff;
+    font-size: 1rem;
+    background: red;
+    opacity: 0.5;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+#button:before{
+    width: 100%;
+    height: 100%;
+    content: '';
+    margin: auto;
+    position: absolute;
+    top:  -100%;
+    left: -100%;
+    background: #212121;
+    transition: all .5s;
+    z-index: -1;
+    
+}
+#button:hover{
+    color: white;
+}
+#button:hover:before{			
+        top: 0;
+        left: 0;
+
+}
+
+.header-right {
+    margin-top: 1rem;
+    padding: 1rem;
+    float: right;
+    line-height: 1rem;
+}
+
+.welcome-text span {
+    text-align: center;
+    color: black;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    font-weight: bolder;
+    text-shadow: 3px 3px 4px rgb(10, 6, 6);
+    -webkit-text-stroke: 0.1vw #efeff9;
+
+}
+
+.welcome-text span::before {
+	height: 100%;
+	color: #37b9f1;
+	overflow: hidden;
+	position: absolute;
+	content: attr(data-text);
+	border-right: 5px solid #f78383;
+	-webkit-text-stroke: 0vw #f7f7fe;
+	animation: animate 6s linear infinite;
+}
+
+@keyframes animate {
+	0%,
+	10%,
+	100% {
+		width: 0;
+	}
+
+	70%,
+	90% {
+		width: 100%;
+	}
+}
+
+
+.welcome-text {
+    position: absolute;
+    margin-top: 1.5%;
+    left: 15%;
+    text-align: center;
+}
+
+.welcome-text li {
+    text-decoration: none;
+    padding: 0;
+    margin-left: 3rem;
+    font-size: 0.8rem;
+    color: black
+}
+
+.welcome-text li {
+    list-style: none;
+
+}
+
+.welcome-text p {
+    color: black;
+    cursor: pointer;
+
+}
+
+i {
+    padding: 5px;
+    color: rgb(13, 55, 224);
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+/* text animation */
+
+.indextitle {
+    text-transform: uppercase;
+    background-image: linear-gradient(-225deg,
+            #231557 0%,
+            #44107a 29%,
+            #ff1361 67%,
+            #fff800 100%);
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+    display: inline-block;
+    font-size: 2rem;
+}
+
+@keyframes textclip {
+    to {
+        background-position: 200% center;
+    }
+}
+
+footer {
+
+    width: 100%;
+    height: 50vh;
+    left: 0;
+    padding: 3rem 10%;
+    background-color: #333;
+    color: #efefef;
+    display: flex;
+}
+
+footer {
+    margin-top: 5vh;
+}
+
+footer div {
+    text-align: center;
+}
+
+.col-2 {
+    flex-grow: 2;
+}
+
+footer div h3 {
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.1rem;
+}
+
+.col-1 a {
+    display: block;
+    text-decoration: none;
+    color: #efefef;
+    margin-bottom: 0.5rem;
+}
+
+footer form input {
+    width: 25vw;
+    height: 6vh;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    outline: none;
+    border: none;
+}
+
+form button {
+    background: transparent;
+    border: 0.1rem solid #fff;
+    color: #fff;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.social-icons {
+    margin-top: 1rem;
+}
+
+.social-icons i {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    color: #fff;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+
+
+@media screen and (max-width: 700px) {
+    header a {
+        float: none;
+        display: block;
+        text-align: left;
+        font-size: 0.5rem;
+        padding: 5px;
+
+    }
+    main {
+        margin-top: 25%;
+       
+    }
+    .header-right {
+        float: none;
+    }
+
+    .welcome-text span {
+        font-size: 0.9rem;
+
+    }
+
+    .welcome-text {
+        top: 0%;
+        margin-left: 10%;
+    }
+
+    .welcome-text p {
+        font-size: 0.6rem;
+        font-style: italic;
+    }
+
+    .welcome-text li a {
+        display: inline-block;
+        margin-left: 0;
+        font-size: 0.7rem;
+    }
+
+    i {
+        font-size: 0.5rem;
+    }
+    footer{
+        font-size: 0.5rem;
+    }
+    .col-2 input[type=email],button[type=submit]{
+        font-size: 0.5rem;
+        height: 5vh;
+    }
+    .row h1 {
+        font-size: 1.5rem;
+    }
+}

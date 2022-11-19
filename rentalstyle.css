@@ -1,0 +1,430 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;1,200;1,300&family=Roboto:wght@300;400;700&display=swap');
+
+/*Reference:*/
+/*Some designs are inspired from Codepen website
+https://codepen.io/soufiane-khalfaoui-hassani/pen/LYpPWda
+*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: linear-gradient(rgba(228, 228, 228, 0.6), rgba(172, 127, 127, 0.2)), url(img/background.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+    width: 100%;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+body ::after {
+    z-index: -1;
+    opacity: 0.5;
+}
+
+main {
+    min-height: 50vh;
+    margin-bottom: -50vh;
+    margin: auto;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    color: black;
+    text-align: center;
+    width: 65%;
+    padding: 1rem 2rem;
+    background-color: #fee8d4;
+    border-radius: 20px;
+    align-items: center;
+    box-shadow: 0px 0px 10px 0px rgb(210, 12, 12);
+    border-radius: 25px 25px;
+
+}
+
+header {
+    height: 20vh;
+    width: 100%;
+    padding: 0px 10px;
+
+}
+
+header a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    border-radius: 4px;
+}
+
+header a.logo img {
+    width: 9vw;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px 0px rgb(210, 12, 12);
+    border-radius: 25px 25px;
+    background: #000;
+}
+
+header a:hover {
+    background-color: rgb(59, 182, 65);
+    color: black
+}
+
+header a.active {
+    background-color: #f78383;
+    color: white;
+}
+
+.header-right {
+    margin-top: 1rem;
+    padding: 1rem;
+    float: right;
+    line-height: 1rem;
+}
+
+.welcome-text span {
+    text-align: center;
+    color: black;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    font-weight: bolder;
+    text-shadow: 3px 3px 4px rgb(10, 6, 6);
+    -webkit-text-stroke: 0.1vw #efeff9;
+}
+
+.welcome-text span::before {
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    content: attr(data-text);
+    border-right: 5px solid #f78383;
+    -webkit-text-stroke: 0vw #f7f7fe;
+    animation: animate 6s linear infinite;
+}
+
+@keyframes animate {
+
+    0%,
+    10%,
+    100% {
+        width: 0;
+    }
+
+    70%,
+    90% {
+        width: 100%;
+    }
+}
+
+
+.welcome-text {
+    position: absolute;
+    margin-top: 1.5%;
+    left: 15%;
+    text-align: center;
+}
+
+.welcome-text li {
+    text-decoration: none;
+    padding: 0;
+    margin-left: 3rem;
+    font-size: 0.8rem;
+    color: black
+}
+
+.welcome-text li {
+    list-style: none;
+
+}
+
+.welcome-text p {
+    color: black;
+    cursor: pointer;
+
+}
+
+i {
+    padding: 5px;
+    color: rgb(13, 55, 224);
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+
+footer {
+
+    width: 100%;
+    height: 50vh;
+    left: 0;
+    padding: 3rem 10%;
+    background-color: #333;
+    color: #efefef;
+    display: flex;
+}
+
+footer {
+    margin-top: 5vh;
+}
+
+footer div {
+    text-align: center;
+}
+
+.col-2 {
+    flex-grow: 2;
+}
+
+footer div h3 {
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.1rem;
+}
+
+.col-1 a {
+    display: block;
+    text-decoration: none;
+    color: #efefef;
+    margin-bottom: 0.5rem;
+}
+
+footer form input {
+    width: 25vw;
+    height: 6vh;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    outline: none;
+    border: none;
+}
+
+form button {
+    background: transparent;
+    border: 0.1rem solid #fff;
+    color: #fff;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.social-icons {
+    margin-top: 1rem;
+}
+
+.social-icons i {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    color: #fff;
+}
+
+table img {
+    width: 26vw;
+    height: 35vh;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+[type=radio]:checked+img {
+    outline: 5px solid #d22e25;
+}
+
+[type=radio] {
+    display: none;
+}
+
+.rental p {
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+table img:hover {
+    transform: translateY(-0.5rem);
+}
+
+.client td,
+.client th {
+    padding: 0.3rem;
+    text-align: left;
+    width: 20vw;
+}
+
+.rental td,
+.rental th {
+    /* align-items: center; */
+    padding: 0.6rem;
+    text-align: left;
+    width: 40vw;
+}
+
+table input[type=text],
+select {
+    width: 35vw;
+    padding: 0.2vw;
+    border: 1px solid rgb(19, 18, 18);
+    border-radius: 4px;
+    box-sizing: border-box;
+    height: 2em;
+    color: rgb(45, 43, 43);
+
+
+
+}
+
+table select {
+    height: 20vh;
+    text-align: center;
+
+
+}
+
+input[type=submit],
+input[type="button"] {
+    background: linear-gradient(135deg, rgba(100, 10, 10, 0.79), #ac1818);
+    color: white;
+    padding: 0.5rem;
+    border: none;
+    cursor: pointer;
+    width: 20%;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    margin-bottom: 2rem;
+
+}
+
+/* text animation */
+
+h2 {
+    text-transform: uppercase;
+    background-image: linear-gradient(-250deg,
+            #231557 0%,
+            #44107a 29%,
+            #ff1361 67%,
+            #fff800 100%);
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+    display: inline-block;
+    font-size: 1.3rem;
+}
+@keyframes textclip {
+    to {
+        background-position: 200% center;
+    }
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+#result td,
+#total th,
+#rentalinformation td,
+#topping td {
+    width: 30vw;
+    text-align: left;
+}
+#topping {
+    text-align: left;
+}
+
+#title,
+#titlerental,
+#option {
+    font-weight: bolder;
+    text-align: left;
+}
+#format {
+    display: none;
+}
+
+@media screen and (max-width: 700px) {
+    main {
+        margin-top: 25%;
+    }
+
+    header a {
+        float: none;
+        display: block;
+        text-align: left;
+        font-size: 0.5rem;
+        padding: 5px;
+    }
+
+    .header-right {
+        float: none;
+    }
+
+    .welcome-text span {
+        font-size: 0.9rem;
+
+    }
+
+    .welcome-text {
+        top: 0%;
+        margin-left: 10%;
+    }
+
+    .welcome-text p {
+        font-size: 0.6rem;
+        font-style: italic;
+    }
+
+    .welcome-text li a {
+        display: inline-block;
+        margin-left: 0;
+        font-size: 0.7rem;
+    }
+
+    i {
+        font-size: 0.5rem;
+    }
+
+    main form {
+        font-size: 0.5rem;
+        margin-top: 8rem;
+    }
+
+    input[type=submit],
+    input[type=button],
+    input[type=text] {
+        width: 30%;
+        font-size: 0.7rem;
+
+    }
+
+    .col-2 input[type=email],
+    button[type=submit] {
+        font-size: 0.5rem;
+        height: 5vh;
+    }
+
+    select {
+        font-size: 0.7rem;
+       
+    }
+
+    table img {
+
+        height: 20vh;
+        width: 25vw;
+        border-radius: 15px;
+    }
+
+    #format,
+    footer {
+        font-size: 0.5rem;
+    }
+}

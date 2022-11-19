@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental</title>
+    <link rel="stylesheet" href="rentalstyle.css">
+    <script src="https://kit.fontawesome.com/e33bf080b0.js" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+
+</head>
+
+<body>
+    <header>
+
+        <a href="#default" class="logo"><img src="img/Logo.png" alt="logo"></a>
+        <div class="welcome-text">
+            <div><span>Dodgy Brakes Car Rental</span>
+                <p><i class="fa-solid fa-phone"></i> 403-888-8888<i class="fa-solid fa-envelope"></i>hoa.le@edu.sait.ca
+                </p>
+
+            </div>
+        </div>
+        <div class="header-right">
+            <a class="active" href="#home">Home</a>
+            <a href="#Ourservice">Our Services</a>
+            <a href="#service">Our People</a>
+            <a href="#contact">Contact</a>
+            <a href="#about">About</a>
+        </div>
+    </header>
+
+    <main>
+        <form id="main" onsubmit="calculaterentfee(); return false">
+            <h2>CLIENT INFORMATION</h2><br><br>
+            <table class="client">
+                <tr>
+                    <td>Search By Last Name</td>
+                    <td><input type="text" name="lastname" id="lastname" class="textbox" required></td>
+                </tr>
+                <tr>
+                    <td>Display Lastname</td>
+                    <td><select size="5" name="displaylastname" id="displaylastname" onchange="controlform()"
+                            class="textbox"></select></td>
+                </tr>
+                <tr>
+                    <td>First Name </td>
+                    <td><input type="text" name="firstname" id="firstname" class="textbox" disabled></td>
+                </tr>
+                <tr>
+                    <td>Last Name </td>
+                    <td><input type="text" name="lastname" id="lname" class="textbox" disabled></td>
+                </tr>
+                <tr>
+                    <td>Address </td>
+                    <td><input type="text" name="address" id="address" class="textbox" disabled></td>
+                </tr>
+                <tr>
+                    <td>State/Province </td>
+                    <td><input type="text" name="province" id="province" class="textbox" disabled></td>
+                </tr>
+                <tr>
+                    <td>Email Addess </td>
+                    <td><input type="text" name="email" id="email" class="textbox" disabled></td>
+                </tr>
+                <tr>
+                    <td>Phone Number </td>
+                    <td><input type="text" name="phonenumber" id="phonenumber" class="textbox" disabled></td>
+                </tr>
+            </table><br>
+            <h2>RENTAL INFORMATION</h2><br><br>
+            <table class="rental">
+                <tr>
+                    <td><label>
+                            <input type="radio" name="rentalChoice" id="compact" value="compact" disabled> 
+                            <img src="img/compact.png" class="car" alt="car1">
+                        </label>
+                        <p>Compact Car ($15/day)</p>
+                    </td>
+                    <td><label>
+                            <input type="radio" name="rentalChoice" id="mid-size" value="mid-size" disabled>
+                            <img src="img/mix.png" class="car" alt="car2">
+                        </label>
+                        <p> Mid-Size Car ($20/day)</p>
+                    </td>
+
+                </tr>
+         
+                <tr>
+                    <td>
+                        <label>
+                            <input type="radio" name="rentalChoice" id="luxury" value="luxury" disabled> 
+                            <img src="img/luxury.png" class="car" alt="car3">
+                        </label>
+                        <p>Luxury Car ($35/day)</p>
+                    </td>
+                    <td><label>
+                        <input type="radio" name="rentalChoice" id="van-truck" value="van-truck" disabled>
+                            <img src="img/van.png" class="car" alt="car4">
+                        </label>
+                        <p>Van/Truck ($40/day)</p>
+                </tr>
+           
+                <tr>
+                    <td><label><input type="checkbox" name="option1" id="option1" value="5" disabled>&nbsp; Roof
+                            Rack or Bicycle Rack extra $5/day</label>
+                        <br>
+                        <label><input type="checkbox" name="option2" id="option2" value="10" disabled>&nbsp; GPS
+                            extra $10</label>
+                        <br>
+                        <label> <input type="checkbox" name="option3" id="option3" value="0" disabled>&nbsp; Child
+                            Seat free</label>
+                    </td>
+                    <td>
+                        <p>Rent for <input type="number" name="dayofrent" id="dayofrent" min="1" max="30" disabled required> days
+                        </p>
+                    </td>
+                </tr>
+
+            </table>
+            <input type="submit" value="Rent Now">
+        </form>
+        <div id="format">
+            <p id="title"></p> <br>
+            <table id="result"></table> <br>
+            <p id="titlerental"></p> <br>
+            <table id="rentalinformation"></table> <br>
+            <p id="option"></p> <br>
+            <table id="topping"></table><br>
+            <table id="total"></table><br>
+            <input id="hiddenreset" type="button" value="Edit Your Choice" onclick="reset()">
+            <input id="exit" type="button" value="Exit" onclick="exit()">
+            <div class="push"></div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="col-1">
+            <h3>USEFULL LINK</h3>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+            <a href="#">Shop</a>
+            <a href="#">Blog</a>
+        </div>
+        <div class="col-2">
+            <h3>NEWSLETTER</h3>
+            <form>
+                <input type="email" placeholder="Your Email Address" required>
+                <br>
+                <button type="submit">SUBCRIBE NOW</button>
+            </form>
+        </div>
+        <div class="col-3">
+
+            <h3>CONTACT</h3>
+            <p><span id="currentime"></span></p>
+            <p>1301-16 Avenue NW
+                Calgary AB, T2M 0L4</p>
+
+            <div class="social-icons">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-behance"></i>
+            </div>
+
+        </div>
+
+
+
+    </footer>
+</body>
+
+</html>
